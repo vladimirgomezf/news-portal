@@ -1,3 +1,21 @@
 from django.db import models
 
-# Create your models here.
+methods_choices = (
+    ('post', 'POST'),
+    ('get', 'GET'),
+    ('delete', 'DELETE'),
+    ('put', 'PUT')
+)
+
+
+class News(models.Model):
+    author = models.CharField('Author', max_length=75)
+    head = models.CharField('Headline', max_length=75)
+    resume = models.CharField('Resume', max_length=250)
+    content = models.CharField('Content', max_length=2500)
+
+
+class LogRegistry(models.Model):
+    method = models.CharField('Method', max_length=10, choices=methods_choices)
+    url = models.URLField('URL')
+    response = models.BooleanField(default=False)
