@@ -1,3 +1,5 @@
+import datetime
+from django.utils.timezone import now
 from django.db import models
 
 methods_choices = (
@@ -13,6 +15,7 @@ class News(models.Model):
     head = models.CharField('Headline', max_length=75)
     resume = models.CharField('Resume', max_length=250)
     content = models.CharField('Content', max_length=2500)
+    publisedDate = models.DateField('Published At', default=now)
 
 
 class LogRegistry(models.Model):

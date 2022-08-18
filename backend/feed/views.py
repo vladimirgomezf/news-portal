@@ -1,5 +1,4 @@
 from django.views.decorators.csrf import csrf_exempt
-
 from .models import *
 from .serializers import *
 from django.http import Http404

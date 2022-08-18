@@ -5,7 +5,7 @@ from .models import News, LogRegistry
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
-        fields = ['author', 'head', 'resume', 'content']
+        fields = ['author', 'head', 'resume', 'content', 'publisedDate']
 
 
 class LogRegistrySerializer(serializers.ModelSerializer):
